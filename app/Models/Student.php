@@ -15,4 +15,9 @@ class Student extends Model
         'last_name',
         'email',
     ];
+
+    public function courses()
+    {
+        $this->belongsToMany(Course::class);
+    }
 }
