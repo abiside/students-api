@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AttendancesIndexRequest extends FormRequest
+class AttendancesStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,6 +25,8 @@ class AttendancesIndexRequest extends FormRequest
     {
         return [
             'date' => 'required|date',
+            'student_id' => 'required|int|exists:students',
+            'is_present' => 'required|boolean',
         ];
     }
 }
